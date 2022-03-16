@@ -1,23 +1,15 @@
 package it.academy.crypto;
 
-import it.academy.crypto.entity.Transaction;
-import it.academy.crypto.service.CryptoService;
-import it.academy.crypto.utils.Utilities;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
+@SpringBootApplication
 public class CryptoApplication {
 
 	public static void main(String[] args) {
+		SpringApplication.run(CryptoApplication.class, args);
 
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
-		EntityManager em = emf.createEntityManager();
-
+/*
 		float totalEUR = 0F;
 		CryptoService cService = new CryptoService(em);
 		for (String coin : cService.getCoins()) {
@@ -35,9 +27,7 @@ public class CryptoApplication {
 		}
 
 		System.out.println("\n===============================\nTotal: " + totalEUR);
-
-		em.close();;
-		emf.close();
+*/
 
 	}
 

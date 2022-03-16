@@ -32,17 +32,17 @@ public class Transaction {
     private String timestamp;
     private String transaction_type;
     private String asset;
-    private Double quantity;
-    private String currency;
-    private Double transaction_price;
+    private Double transaction_quantity;
+    private String transaction_currency;
+    private Double transaction_spot_price;
     private Double subtotal;
     private Double total;
     private Float fees;
     private String notes;
-    private Double transacted_qty;
+    private Double transacted_quantity;
 
-    public Double getTransactedQty() {
-        double transactionQty = this.quantity;
+    public Double getTransactedQuantity() {
+        double transactionQty = this.transaction_quantity;
         switch (transaction_type) {
             case "Convert":
             case "Send":
@@ -52,7 +52,7 @@ public class Transaction {
         return transactionQty;
     }
 
-    public void setTransactedQty(Double transactedQty) {
+    public void setTransactedQuantity(Double transactedQty) {
     }
 
 
@@ -63,18 +63,20 @@ public class Transaction {
         this.timestamp = timestamp;
         this.asset = asset;
         this.transaction_type = transaction_type;
-        this.quantity = quantity;
-        this.currency = currency;
-        this.transaction_price = transaction_price;
+        this.transaction_quantity = quantity;
+        this.transaction_currency = currency;
+        this.transaction_spot_price = transaction_price;
         this.subtotal = subtotal;
         this.total = total;
         this.fees = fees;
         this.notes = notes;
     }
 
+
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -87,38 +89,44 @@ public class Transaction {
         this.timestamp = timestamp;
     }
 
-    public String getTransaction_type() { return transaction_type; }
+    public String getTransaction_type() {
+        return transaction_type;
+    }
 
-    public void setTransaction_type(String transaction_type) { this.transaction_type = transaction_type; }
+    public void setTransaction_type(String transaction_type) {
+        this.transaction_type = transaction_type;
+    }
 
     public String getAsset() {
         return asset;
     }
 
-    public void setAsset(String asset) { this.asset = asset; }
-
-    public Double getQuantity() {
-        return quantity;
+    public void setAsset(String asset) {
+        this.asset = asset;
     }
 
-    public void setQuantity(Double quantity) {
-        this.quantity = quantity;
+    public Double getTransaction_quantity() {
+        return transaction_quantity;
     }
 
-    public String getCurrency() {
-        return currency;
+    public void setTransaction_quantity(Double transaction_quantity) {
+        this.transaction_quantity = transaction_quantity;
     }
 
-    public void setCurrency(String currency) {
-        this.currency = currency;
+    public String getTransaction_currency() {
+        return transaction_currency;
     }
 
-    public Double getTransaction_price() {
-        return transaction_price;
+    public void setTransaction_currency(String transaction_currency) {
+        this.transaction_currency = transaction_currency;
     }
 
-    public void setTransaction_price(Double transaction_price) {
-        this.transaction_price = transaction_price;
+    public Double getTransaction_spot_price() {
+        return transaction_spot_price;
+    }
+
+    public void setTransaction_spot_price(Double transaction_spot_price) {
+        this.transaction_spot_price = transaction_spot_price;
     }
 
     public Double getSubtotal() {
